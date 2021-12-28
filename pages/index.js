@@ -1,82 +1,76 @@
-import Head from 'next/head'
+import Banner from "components/Banner";
+import Header from "components/Header";
+import MediumCard from "components/mediumCard";
+import { getFolders, mapImageResources, search } from "lib/cloudinary";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Home({ images }) {
+  console.log(images);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Snow Legend Malamutes</title>
+        <link rel="icon" href="/snowLegend.png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
+      {/* HEADER put in _app.js */}
+      {/* <Header /> */}
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+      {/* BANNER */}
+      <Banner />
+      <main className="max-w-7xl mx-auto px-10 md:px-0 bg-gray-100">
+        <section className="font-fancy pt-8">
+          <h2 className="text-3xl pb-2 md:text-center">Our Malamutes</h2>
+          <div className="relative  max-w-3xl mx-auto h-80 sm:h-96">
+              <Image
+                src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640670548/LettyRollo/re8gcudx5zv4jctzfsen.jpg"
+                className="rounded-xl"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top"
+                priority
+              />
+            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-3xl md:pl-2 mx-auto gap-5 mt-5 pb-10">
+            {images.map(({ id, name, image }) => (
+              <div key={id}>
+                <MediumCard img={image} name={name} />
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <section>
+          {/* PUPPIES SMALL CARDS OR A BIG POSTER CARD OF ALL PUPPIES */}
+        </section>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+      {/* FOOTER */}
     </div>
-  )
+  );
+}
+
+export async function getStaticProps({ params }) {
+  console.log("params",params);
+  const results = await search({
+    expression: "folder=malamuteCards",
+  });
+
+  const { resources, next_cursor: nextCursor } = results;
+  const images = mapImageResources(resources);
+
+  const { folders } = await getFolders();
+
+  return {
+    props: {
+      images,
+      nextCursor: nextCursor || false,
+      folders,
+    },
+  };
 }
