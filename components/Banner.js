@@ -14,13 +14,14 @@ const Banner = () => {
         src="https://res.cloudinary.com/dtram9qiy/image/upload/v1639963844/hairSalonHeros/tndjyg87iw6nbrnfzspk.png"
         layout="fill"
         objectfit="cover"
-        priority
+        priority={true}
+        as="image"
       />
       <Image
         src="https://res.cloudinary.com/dtram9qiy/image/upload/v1638294355/hairSalonHeros/wgx5qjm0wqefiyk88fsn.png"
         layout="fill"
         objectfit="cover"
-        priority
+        priority="true"
       />
       <div className="absolute bottom-0 w-full text-center font-fancy md:hidden">
         <p className="text-xl sm:text-3xl text-white">Snow Legend Malamutes</p>

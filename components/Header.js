@@ -5,11 +5,11 @@ const Header = () => {
   const router = useRouter();
   return (
     <header className="sticky bg-white top-0 z-50 border-b shadow-md">
-      <nav className="flex justify-between max-w-6xl px-5 sm:px-10 lg:mx-auto  py-3">
+      <nav className="flex justify-between max-w-6xl mx-5 sm:mx-10 xl:mx-auto py-2">
         {/* Left Side */}
         <div className="flex items-center cursor-pointer" onClick={() => router.push("/")}>
-          <div className="relative flex items-center h-12 w-12">
-            <Image src="/snowLegend.png" layout="fill" objectFit="contain" priority />
+          <div className="relative flex items-center h-14 w-14">
+            <Image src="/snowLegend.png" layout="fill" objectFit="contain" />
           </div>
           <h1 className="hidden md:inline-block  ml-3 text-xl font-fancy">
             Snow Legend Malamutes

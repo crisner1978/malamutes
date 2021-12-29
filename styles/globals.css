@@ -7,4 +7,10 @@
     .h1 {
         @apply font-thin
     }
+    .cursorBtn {
+        @apply h-5 animate-pulse text-blue-500 hover:scale-110 transition-all duration-150 ease-out
+    }
+    .homeCursorBtn {
+        @apply hover:scale-110 hover:text-blue-500 transition-all duration-150 ease-out
+    }
 }
