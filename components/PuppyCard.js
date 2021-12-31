@@ -9,7 +9,7 @@ const PuppyCard = ({ img, name, id }) => {
         <h2 className={`text-3xl pb-1 md:text-center mt-3 ${female ? "text-pink-500" : "text-blue-500"}`}>
           {name}
         </h2>
-        <div className="relative w-[360px] h-96">
+        <div className="relative w-[350px] h-96">
           <Image
             src={img}
             className="rounded-xl"

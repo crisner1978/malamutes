@@ -39,7 +39,7 @@ const Malamutes = ({ images, nextCursor, folders }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-6xl mx-auto gap-10 mt-10 px-2">
         {images?.map((image) => (
           <div key={image.id}>
-            <div className="relative w-[360px] h-96 cursor-pointer hover:scale-105 transform transition duration-150 ease-out rounded-xl hover:shadow-xl">
+            <div className="relative w-[350px] h-96 cursor-pointer hover:scale-105 transform transition duration-150 ease-out rounded-xl hover:shadow-xl">
               <Image
                 src={image.image}
                 className="rounded-xl"

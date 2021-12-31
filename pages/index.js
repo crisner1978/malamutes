@@ -16,7 +16,7 @@ export default function Home({ images }) {
       <Banner />
       <main className="max-w-7xl mx-auto px-3 sm:px-10 bg-gray-50">
       <section className="py-24 grid px-3 sm:px-10 md:px-16 max-w-3xl items-center mx-auto">
-          <div className="flex flex-col items-center justify-center pb-4">
+          <div className="flex flex-col items-center justify-center pb-4 pt-10">
             <div className="relative h-40 w-40 mb-4">
               <Image
                 src="/snowLegend.png"
@@ -53,7 +53,7 @@ export default function Home({ images }) {
               objectPosition="top"
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-5 mt-5 pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-10 mt-5 pb-10">
             {images.map(({ id, name, image }) => (
               <div key={id}>
                 <MediumCard img={image} name={name} />

@@ -15,10 +15,10 @@ const Hero = ({ image, image1, description, button, location }) => {
         </button>
       </div>
       <div
-        className="inline-block rounded-l-full fixed py-1 pl-3 pr-2
+        className="inline-block rounded-l-full fixed py-1 pl-3 pr-2 md:py-3 md:pl-8 md:pr-4
          bg-black right-0 top-1/4 z-40 cursor-pointer hover:scale-105"
       >
-        <span className="font-fancy text-sm text-right  text-white">
+        <span className="font-fancy text-sm md:text-base text-right  text-white">
           Contact Us
         </span>
       </div>

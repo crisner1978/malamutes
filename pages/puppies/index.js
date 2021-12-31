@@ -19,7 +19,7 @@ const Puppies = ({ images }) => {
       <main className="max-w-7xl mx-auto px-2 sm:px-10 bg-gray-50">
         <section className="font-fancy pt-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-5 mt-5 pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-10 mt-5 pb-10">
             {images.map(({ id, name, image }) => (
               <div key={id}>
                 <PuppyCard img={image} name={name} />
