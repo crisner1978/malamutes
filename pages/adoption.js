@@ -1,4 +1,4 @@
-function adoption() {
+export default function Adoption() {
     return (
         <div>
             I'm th adoption form.
@@ -6,4 +6,4 @@ function adoption() {
     )
 }
 
-export default adoption
+

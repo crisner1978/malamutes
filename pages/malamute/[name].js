@@ -2,6 +2,7 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/outline";
+import Hero from "components/Hero";
 import { getFolders, mapImageResources, search } from "lib/cloudinary";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,41 +22,20 @@ const Malamutes = ({ images, nextCursor, folders }) => {
 
   return (
     <div className="bg-gray-50">
-      <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] ">
-        {router.query.name === "rollo" && (
-          <Image
-            src="https://res.cloudinary.com/dtram9qiy/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640731348/malamuteHeros/qdutpmhwabbwrqhcwexm.jpg"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        )}
-        {router.query.name === "letty" && (
-          <Image
-            src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640466871/malamuteHeros/maa1on3byr3ki0c190m9.jpg"
-            layout="fill"
-            objectFit="cover"
-            objectPosition=""
-          />
-        )}
+      {router.query.name === "letty" ? (
+        <Hero image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640466871/malamuteHeros/maa1on3byr3ki0c190m9.jpg"
+              image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+              description={`${router.query.name}'s gallery`}
+              button="Home" 
+              location="/" />
+      ) : (
+        <Hero image="https://res.cloudinary.com/dtram9qiy/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640731348/malamuteHeros/qdutpmhwabbwrqhcwexm.jpg"
+              image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+              description={`${router.query.name}'s gallery`}
+              button="Home"
+              location="/" />
+      )}
 
-        <div className="absolute bottom-0 w-full text-center font-fancy">
-          <p
-            className={`text-xl sm:text-3xl ${
-              router.query.name === "rollo" && "text-white"
-            }`}
-          >
-            {router.query.name}'s Gallery
-          </p>
-          <button
-            onClick={() => router.push("/")}
-            className="text-sm py-2 px-5 sm:py-3 sm:px-8 sm:text-base bg-white
-            rounded-full mb-5 mt-2 active:scale-90 transition duration-200"
-          >
-            home
-          </button>
-        </div>
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-6xl mx-auto gap-10 mt-10 px-2">
         {images?.map((image) => (
           <div key={image.id}>
@@ -78,9 +58,9 @@ const Malamutes = ({ images, nextCursor, folders }) => {
           </button>
         )}
         <Link href={`/malamute/[name]`} as={`/malamute/${opposite}`}>
-          <span className="font-fancy inline-flex items-center cursor-pointer hover:scale-110 transition-all duration-150 ease-out">
+          <span className={`cursorLabel ${router.query.name === "rollo" ? "hover:text-pink-500": "hover:text-blue-500"}`}>
             {router.query.name === "rollo" && (
-              <ChevronDoubleLeftIcon className="cursorBtn pr-2" />
+              <ChevronDoubleLeftIcon className="cursorBtn text-pink-500 pr-2" />
             )}
             {`${opposite}'s Gallery`}
             {router.query.name === "letty" && (
@@ -100,14 +80,14 @@ const Malamutes = ({ images, nextCursor, folders }) => {
 
 export default Malamutes;
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: true,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: true,
+//   };
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   console.log("PARAMS.NAME", params.name);
   const str = params.name;
   const str2 = str.charAt(0).toUpperCase() + str.slice(1);
@@ -120,7 +100,7 @@ export async function getStaticProps({ params }) {
   const images = mapImageResources(resources);
 
   const { folders } = await getFolders();
-  console.log(folders)
+  console.log(folders);
 
   return {
     props: {

@@ -11,14 +11,14 @@ const Banner = () => {
         muted
       />
       <Image
-        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1639963844/hairSalonHeros/tndjyg87iw6nbrnfzspk.png"
+        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
         layout="fill"
         objectfit="cover"
-        priority={true}
+        priority='true'
         as="image"
       />
       <Image
-        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1638294355/hairSalonHeros/wgx5qjm0wqefiyk88fsn.png"
+        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819429/malamuteHeros/p54e8ptgcsag3inqs9qg.png"
         layout="fill"
         objectfit="cover"
         priority="true"
@@ -26,8 +26,7 @@ const Banner = () => {
       <div className="absolute bottom-0 w-full text-center font-fancy md:hidden">
         <p className="text-xl sm:text-3xl text-white">Snow Legend Malamutes</p>
         <button
-          className="text-sm py-2 px-5 sm:py-3 sm:px-8 sm:text-base bg-white
-            rounded-full mb-5 mt-2 active:scale-90 transition duration-200"
+          className="heroBtn"
         >
           Contact Us
         </button>
