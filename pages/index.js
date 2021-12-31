@@ -5,17 +5,17 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Home({ images }) {
-  const router = useRouter()
+  const router = useRouter();
   return (
-    <div className="">
+    <div className="bg-gray-50">
       {/* Head in _app.js */}
       {/* HEADER put in _app.js */}
       {/* <Header /> */}
 
       {/* BANNER */}
       <Banner />
-      <main className="max-w-7xl mx-auto px-3 sm:px-10 bg-gray-50">
-      <section className="py-24 grid px-3 sm:px-10 md:px-16 max-w-3xl items-center mx-auto">
+      <main className="max-w-7xl mx-auto px-3">
+        <section className="py-24 grid px-3 sm:px-16 max-w-3xl items-center mx-auto">
           <div className="flex flex-col items-center justify-center pb-4 pt-10">
             <div className="relative h-40 w-40 mb-4">
               <Image
@@ -35,10 +35,16 @@ export default function Home({ images }) {
           <div className="text-gray-500 font-medium text-xl">
             <p className="indent-10 pb-5">
               We are pleased to announce our first litter of TEN puppies from
-              Rollo and Letty. Please visit our <span className="text-blue-500 cursor-pointer" onClick={() => router.push("/puppies")}>Puppies </span>page for
-              additional details and photos. All of our puppies are vet checked,
-              wormed, and given age appropriate shots before joining their new
-              families.
+              "Papa" Rollo and "Mama" Letty. Please visit our{" "}
+              <span
+                className="text-blue-500 cursor-pointer"
+                onClick={() => router.push("/puppies")}
+              >
+                Puppies{" "}
+              </span>
+              page for additional details and photos. All of our puppies are vet
+              checked, wormed, and given age appropriate shots before joining
+              their new families.
             </p>
           </div>
         </section>
@@ -55,7 +61,7 @@ export default function Home({ images }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-10 mt-5 pb-10">
             {images.map(({ id, name, image }) => (
-              <div key={id}>
+              <div key={id} className="mx-auto">
                 <MediumCard img={image} name={name} />
               </div>
             ))}

@@ -2,6 +2,7 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
 } from "@heroicons/react/outline";
+import BioText from "components/BioText";
 import Hero from "components/Hero";
 import { getFolders, mapImageResources, search } from "lib/cloudinary";
 import Image from "next/image";
@@ -23,22 +24,37 @@ const Malamutes = ({ images, nextCursor, folders }) => {
   return (
     <div className="bg-gray-50">
       {router.query.name === "letty" ? (
-        <Hero image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640466871/malamuteHeros/maa1on3byr3ki0c190m9.jpg"
-              image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
-              description={`${router.query.name}'s gallery`}
-              button="Home" 
-              location="/" />
+        <>
+          <Hero
+            image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640466871/malamuteHeros/maa1on3byr3ki0c190m9.jpg"
+            image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+            description={`${router.query.name}'s gallery`}
+            button="Home"
+            location="/"
+          />
+          <BioText
+            title="Hi, my name is Letty!"
+            description="I'm a beautiful 85lb gray and white Alaskan Malamtue born on 5/21/2018. I have a very loving and 
+            loyal disposition. I enjoy long walks and movies in bed with my humans. Sometimes you'll find me on the couch too."
+          />
+        </>
       ) : (
-        <Hero image="https://res.cloudinary.com/dtram9qiy/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640731348/malamuteHeros/qdutpmhwabbwrqhcwexm.jpg"
-              image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
-              description={`${router.query.name}'s gallery`}
-              button="Home"
-              location="/" />
+        <>
+          <Hero
+            image="https://res.cloudinary.com/dtram9qiy/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640731348/malamuteHeros/qdutpmhwabbwrqhcwexm.jpg"
+            image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+            description={`${router.query.name}'s gallery`}
+            button="Home"
+            location="/"
+          />
+          <BioText title="Hey, my name is Rollo!" description="I'm a huge and hansome 120lb gray and white Alaskan Malamute born on 12/21/20.
+          I am most definitely a lover not a fighter. All encounters come with hugs and kisses! Gentle giant who enjoys cuddling, chasing my tail and chewing a nice bone next to the fire." />
+        </>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 md:max-w-3xl xl:grid-cols-3 xl:max-w-6xl mx-auto gap-10 mt-10 px-2">
         {images?.map((image) => (
-          <div key={image.id}>
+          <div key={image.id} className="mx-auto">
             <div className="relative w-[350px] h-96 cursor-pointer hover:scale-105 transform transition duration-150 ease-out rounded-xl hover:shadow-xl">
               <Image
                 src={image.image}
@@ -51,14 +67,20 @@ const Malamutes = ({ images, nextCursor, folders }) => {
           </div>
         ))}
       </div>
-      <div className="flex items-center  justify-between font-fancy md:max-w-3xl xl:max-w-6xl mx-auto py-10 px-2">
+      <div className="flex items-center  justify-between font-fancy md:max-w-3xl xl:max-w-6xl mx-auto py-10 px-4">
         {router.query.name === "letty" && (
           <button onClick={() => router.push("/")} className="homeCursorBtn">
             home
           </button>
         )}
         <Link href={`/malamute/[name]`} as={`/malamute/${opposite}`}>
-          <span className={`cursorLabel ${router.query.name === "rollo" ? "hover:text-pink-500": "hover:text-blue-500"}`}>
+          <span
+            className={`cursorLabel ${
+              router.query.name === "rollo"
+                ? "hover:text-pink-500"
+                : "hover:text-blue-500"
+            }`}
+          >
             {router.query.name === "rollo" && (
               <ChevronDoubleLeftIcon className="cursorBtn text-pink-500 pr-2" />
             )}

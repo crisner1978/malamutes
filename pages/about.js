@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <main className="bg-gray-100">
+    <main className="bg-gray-50">
       <section className="pt-16 pb-10 grid px-6 sm:px-16 max-w-3xl items-center mx-auto">
         <div className="flex flex-col items-center justify-center pb-10">
           <div className="relative h-40 w-40 mb-3">
@@ -25,7 +25,7 @@ export default function About() {
           className="inline-block rounded-l-full fixed py-1 pl-3 pr-2 md:py-3 md:pl-8 md:pr-4
          bg-black right-0 top-1/4 z-40 cursor-pointer hover:scale-105"
         >
-          <span className="font-fancy text-sm md:text-base text-right  text-white">
+          <span className="font-fancy text-sm md:text-base text-right text-white">
             Contact Us
           </span>
         </div>

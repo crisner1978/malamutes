@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="relative">
       <video
-        className="min-w-full relative"
+        className="min-w-full relative min-h-[300px] max-h-[600px] object-cover"
         src="snowDog.mov"
         autoPlay
         loop
