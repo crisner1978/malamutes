@@ -23,4 +23,25 @@
     .navBtn {
         @apply cursor-pointer hover:scale-x-105 transition-all transform duration-150 ease-out hover:text-gray-500
     }
+
+    /* modal form styles */
+    .inputWrapper {
+        @apply flex flex-col
+    }
+    .formLabel {
+        @apply text-sm font-fancy text-gray-700 pb-1;
+    }
+    .formInput {
+        @apply bg-gray-200 bg-opacity-90 font-medium focus:ring-0 outline-none border-none mb-3 rounded-lg;
+    }
+    .formSubmitBtn {
+        @apply text-xl font-fancy py-2 text-blue-500 
+            hover:text-white hover:bg-blue-500 rounded-full max-w-full
+            shadow-lg active:scale-95 
+            transition-all transform duration-150 ease-out
+            border-blue-500 border-2; 
+      }
+      .formErrorMsg {
+        @apply absolute right-6 text-red-500 font-fancy text-sm;
+      }
 }

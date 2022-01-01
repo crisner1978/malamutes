@@ -47,7 +47,7 @@ const Malamutes = ({ images, nextCursor, folders }) => {
             button="Home"
             location="/"
           />
-          <BioText title="Hey, my name is Rollo!" description="I'm a huge and hansome 120lb gray and white Alaskan Malamute born on 12/21/20.
+          <BioText title="Hey, my name is Rollo!" description="I'm a huge and handsome 120lb gray and white Alaskan Malamute born on 12/21/20.
           I am most definitely a lover not a fighter. All encounters come with hugs and kisses! Gentle giant who enjoys cuddling, chasing my tail and chewing a nice bone next to the fire." />
         </>
       )}

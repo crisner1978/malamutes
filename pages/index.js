@@ -8,11 +8,6 @@ export default function Home({ images }) {
   const router = useRouter();
   return (
     <div className="bg-gray-50">
-      {/* Head in _app.js */}
-      {/* HEADER put in _app.js */}
-      {/* <Header /> */}
-
-      {/* BANNER */}
       <Banner />
       <main className="max-w-7xl mx-auto px-3">
         <section className="py-24 grid px-3 sm:px-16 max-w-3xl items-center mx-auto">

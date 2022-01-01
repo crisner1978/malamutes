@@ -1,8 +1,9 @@
-import Hero from "components/Hero";
-import Head from "next/head";
+import { modalState } from "atoms/modalAtom";
 import Image from "next/image";
+import { useRecoilState } from "recoil";
 
 export default function About() {
+  const [open, setOpen] = useRecoilState(modalState);
   return (
     <main className="bg-gray-50">
       <section className="pt-16 pb-10 grid px-6 sm:px-16 max-w-3xl items-center mx-auto">
@@ -25,7 +26,10 @@ export default function About() {
           className="inline-block rounded-l-full fixed py-1 pl-3 pr-2 md:py-3 md:pl-8 md:pr-4
          bg-black right-0 top-1/4 z-40 cursor-pointer hover:scale-105"
         >
-          <span className="font-fancy text-sm md:text-base text-right text-white">
+          <span
+            onClick={() => setOpen(true)}
+            className="font-fancy text-sm md:text-base text-right text-white"
+          >
             Contact Us
           </span>
         </div>
