@@ -13,12 +13,21 @@ export default function applicationAPI(req, res) {
   City: ${body.city}\r\n
   State: ${body.state}\r\n
   Zip Code: ${body.zip}\r\n
-  Which puppy are you interested in?: ${body.puppy}\r\n
-  Why do you want an Alaskan Malamute Puppy?: ${body.why}\r\n
-  Have you ever owned an Alaskan Malamute?: ${body.owned}\r\n
-  Do you have a fenced yard?: ${body.fenced}\r\n
-  Please list everyone in your household and their ages.: ${body.household}\r\n
-  Please list other pets (type, gender, and age).: ${body.pets}\r\n
+  \r\n
+  Which puppy are you interested in? ${body.puppy}\r\n
+  \r\n
+  Why do you want an Alaskan Malamute Puppy?\r\n
+  ${body.why}\r\n
+  \r\n
+  Have you ever owned an Alaskan Malamute? ${body.owned}\r\n
+  \r\n
+  Do you have a fenced yard? ${body.fenced}\r\n
+  \r\n
+  Please list everyone in your household and their ages.\r\n
+  ${body.household}\r\n
+  \r\n
+  Please list other pets (type, gender, and age).\r\n
+  ${body.pets}\r\n
   `;
 
   const thanks = `<h3>Hi ${body.name},\r\n
