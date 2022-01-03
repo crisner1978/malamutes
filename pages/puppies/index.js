@@ -7,7 +7,7 @@ import React from "react";
 
 const Puppies = ({ images }) => {
   const today = moment([2021, 11, 11]).fromNow(true);
-  console.log(today);
+  // console.log(today);
 
   return (
     <div className="bg-gray-50">

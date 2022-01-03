@@ -1,6 +1,6 @@
 import {
   ChevronDoubleLeftIcon,
-  ChevronDoubleRightIcon,
+  ChevronDoubleRightIcon
 } from "@heroicons/react/outline";
 import BioText from "components/BioText";
 import Hero from "components/Hero";
@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 
 const Malamutes = ({ images, nextCursor, folders }) => {
   const router = useRouter();
-  console;
+
   const opposite =
     router.query.name === "rollo"
       ? "letty"
@@ -19,7 +19,7 @@ const Malamutes = ({ images, nextCursor, folders }) => {
       ? "rollo"
       : null;
 
-  console.log("Query", router.query);
+  // console.log("Query", router.query);
 
   return (
     <div className="bg-gray-50">
@@ -47,8 +47,11 @@ const Malamutes = ({ images, nextCursor, folders }) => {
             button="Home"
             location="/"
           />
-          <BioText title="Hey, my name is Rollo!" description="I'm a huge and handsome 120lb gray and white Alaskan Malamute born on 12/21/20.
-          I am most definitely a lover not a fighter. All encounters come with hugs and kisses! Gentle giant who enjoys cuddling, chasing my tail and chewing a nice bone next to the fire." />
+          <BioText
+            title="Hey, my name is Rollo!"
+            description="I'm a huge and handsome 120lb gray and white Alaskan Malamute born on 12/21/20.
+          I am most definitely a lover not a fighter. All encounters come with hugs and kisses! Gentle giant who enjoys cuddling, chasing my tail and chewing a nice bone next to the fire."
+          />
         </>
       )}
 
@@ -111,9 +114,9 @@ export default Malamutes;
 // }
 
 export async function getServerSideProps({ params }) {
-  console.log("PARAMS.NAME", params.name);
+  // console.log("PARAMS.NAME", params.name);
   const str = params.name;
-  
+
   const results = await search({
     expression: `folder="malamutes/${str}"`,
   });
@@ -122,7 +125,7 @@ export async function getServerSideProps({ params }) {
   const images = mapImageResources(resources);
 
   const { folders } = await getFolders();
-  console.log(folders);
+  // console.log(folders);
 
   return {
     props: {

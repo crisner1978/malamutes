@@ -3,7 +3,7 @@ mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default function applicationAPI(req, res) {
   const body = JSON.parse(req.body);
-  console.log(body);
+  // console.log(body);
 
   const application = `
   Name: ${body.name}\r\n
