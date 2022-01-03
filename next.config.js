@@ -4,12 +4,12 @@ module.exports = {
     images: {
         domains: ["res.cloudinary.com"],
     },
-    // async headers() {
-    //     return [
-    //         {
-    //             source: "/(.*)",
-    //             headers: headers,
-    //         }
-    //     ]
-    // }
+    async headers() {
+        return [
+            {
+                source: "/(.*)",
+                headers: headers,
+            }
+        ]
+    }
 }
