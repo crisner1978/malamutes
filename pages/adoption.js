@@ -79,7 +79,7 @@ export default function Adoption() {
       ) : (
         <input
           {...register(label, { required: `${label} is required` })}
-          className="formInput font-fancy"
+          className="formInput"
           type={type}
           placeholder={placeholder}
         />
@@ -96,7 +96,7 @@ export default function Adoption() {
       </label>
       <select
         {...register(label, { required: `${label} is required` })}
-        className="formInput font-fancy text-gray-500"
+        className="formInput text-gray-500"
       >
         {items.map(({ value, optionName }) => (
           <option key={value} value={value}>
@@ -117,7 +117,7 @@ export default function Adoption() {
         {...register(label, {
           required: "is required",
         })}
-        className="formInput font-fancy"
+        className="formInput"
         name={label}
         id={number}
         cols="30"
@@ -139,7 +139,7 @@ export default function Adoption() {
           phone
         </label>
         <PhoneInput
-          className="formInput font-fancy"
+          className="formInput"
           name="phone"
           placeholder="Phone"
           control={control}
