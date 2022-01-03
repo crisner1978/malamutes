@@ -15,9 +15,9 @@ export default function Home({ images }) {
     onEnter: ({ unobserve }) => unobserve(),
   });
   return (
-    <div className="bg-gray-50">
+    <div className="">
       <Banner />
-      <main className="max-w-7xl mx-auto px-3">
+      <main className="max-w-7xl mx-auto px-3 bg-gray-50">
         <section className="py-24 grid px-3 sm:px-0 max-w-3xl items-center mx-auto">
           <div className="flex flex-col items-center justify-center pb-4 pt-10">
             <div className="relative h-40 w-40 mb-4">

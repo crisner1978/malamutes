@@ -10,7 +10,7 @@ const Puppies = ({ images }) => {
   // console.log(today);
 
   return (
-    <div className="bg-gray-50">
+    <div className="">
       <Hero
         image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640818645/my-uploads/htdxnuckim5oswnkpafo.jpg"
         image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
@@ -19,7 +19,7 @@ const Puppies = ({ images }) => {
         location="/"
       />
 
-      <main className="max-w-7xl mx-auto px-3">
+      <main className="max-w-7xl mx-auto px-3 bg-gray-50">
         <BioText
           title="Snow Legend Malamutes"
           video="https://res.cloudinary.com/dtram9qiy/video/upload/v1641098209/my-uploads/IMG_6341_u1hilb.mov"
