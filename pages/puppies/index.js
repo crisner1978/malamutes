@@ -10,7 +10,7 @@ const PuppyVideo = dynamic(() => import("components/PuppyVideo"));
 
 const Puppies = ({ images }) => {
   const today = moment([2021, 11, 11]).fromNow(true);
-  const { observe, inView, unobserve } = useInView({
+  const { observe, inView } = useInView({
     onEnter: ({ unobserve }) => unobserve(),
   });
   // console.log(today);

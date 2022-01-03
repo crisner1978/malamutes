@@ -173,7 +173,7 @@ export default function Adoption() {
         question="Which puppy are you interested in?"
       />
       <Textarea
-        number="4"
+        number="2"
         label="why"
         question="Why do you want an Alaskan Malamute Puppy?"
       />
@@ -184,7 +184,7 @@ export default function Adoption() {
       />
 
       <Textarea
-        number="2"
+        number="4"
         label="fenced"
         question="Do you have a fenced yard?"
       />
