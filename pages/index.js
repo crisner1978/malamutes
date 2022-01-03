@@ -1,11 +1,11 @@
 import Banner from "components/Banner";
-import MediumCard from "components/MediumCard";
+import DogCard from "components/DogCard";
 import { getFolders, mapImageResources, search } from "lib/cloudinary";
 import moment from "moment";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useInView from "react-cool-inview";
-import dynamic from "next/dynamic";
 const PuppyVideo = dynamic(() => import("components/PuppyVideo"));
 
 export default function Home({ images }) {
@@ -73,7 +73,7 @@ export default function Home({ images }) {
           <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-10 mt-5 pb-10">
             {images.map(({ id, name, image }) => (
               <div key={id} className="mx-auto rounded-xl">
-                <MediumCard img={image} name={name} />
+                <DogCard img={image} name={name} />
               </div>
             ))}
           </div>

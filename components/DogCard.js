@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const MediumCard = ({ img, name, id }) => {
+const DogCard = ({ img, name, id }) => {
   return (
     <Link href={`/malamute/[name]`} as={`/malamute/${name}`}>
       <div className="cursor-pointer hover:scale-105 transform transition duration-150 ease-out w-[350px]">
@@ -20,4 +20,4 @@ const MediumCard = ({ img, name, id }) => {
   );
 };
 
-export default MediumCard;
+export default DogCard;
