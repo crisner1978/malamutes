@@ -4,10 +4,6 @@ module.exports = [
       value: "on",
     },
     {
-      key: "Strict-Transport-Security",
-      value: "max-age=63072000; includeSubDomains; preload",
-    },
-    {
       key: "Server",
       value: "Vercel",
     },
@@ -17,7 +13,7 @@ module.exports = [
     },
     {
       key: "X-Frame-Options",
-      value: "SAMEORIGIN",
+      value: "DENY",
     },
     {
       key: "X-XSS-Protection",
@@ -26,11 +22,6 @@ module.exports = [
     {
       key: "Permissions-Policy",
       value: "camera=(), microphone=()",
-    },
-  
-    {
-      key: "Referrer-Policy",
-      value: "strict-origin-when-cross-origin",
     },
   ];
   
