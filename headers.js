@@ -9,7 +9,7 @@ module.exports = [
     },
     {
       key: "Server",
-      value: "Apache",
+      value: "Vercel",
     },
     {
       key: "X-Content-Type-Options",

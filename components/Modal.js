@@ -14,6 +14,7 @@ const Modal = () => {
   const {
     register,
     handleSubmit,
+    reset,
     control,
     formState: { errors },
   } = useForm({ mode: "onBlur" });
@@ -27,6 +28,7 @@ const Modal = () => {
     {
       onSuccess: () => {
         setOpen(false);
+        reset();
       },
       onError: (error) => {
         console.log(error);
@@ -43,6 +45,7 @@ const Modal = () => {
       phone: formatPhoneNumber(phone),
       message,
     };
+    
     mutateAsync(newMessage);
   }
 

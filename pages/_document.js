@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
     let csp = `default-src 'self'; script-src 'self' ${cspHashOf(
       NextScript.getInlineScriptSource(this.props)
     )}`;
-    if (process.env.NODE_ENV == "production") {
+    if (process.env.NODE_ENV === "production") {
       csp = `style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com;
       default-src 'self'; img-src 'self' data:; media-src res.cloudinary.com; script-src 'unsafe-eval' 'self' 
       ${cspHashOf( NextScript.getInlineScriptSource(this.props) )}`;
