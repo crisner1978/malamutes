@@ -66,7 +66,6 @@ export default function Adoption() {
       pets,
     };
     mutateAsync(newApp);
-    reset();
   }
 
   const Input = ({ label, type, placeholder, component }) => (
