@@ -1,5 +1,5 @@
 import Banner from "components/Banner";
-import MediumCard from "components/mediumCard";
+import MediumCard from "components/MediumCard";
 import { getFolders, mapImageResources, search } from "lib/cloudinary";
 import moment from "moment";
 import Image from "next/image";
