@@ -16,7 +16,7 @@ const Banner = () => {
         muted
       />
       <Image
-        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819429/malamutes/heros/cellgradianttop.png"
         layout="fill"
         objectfit="cover"
         priority="true"
@@ -24,7 +24,7 @@ const Banner = () => {
         alt="background gradiant"
       />
       <Image
-        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819429/malamuteHeros/p54e8ptgcsag3inqs9qg.png"
+        src="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamutes/heros/cellgradiantbottom.png"
         layout="fill"
         objectfit="cover"
         priority="true"

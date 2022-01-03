@@ -13,7 +13,7 @@ const PuppyNames = ({ images, nextCursor, folders }) => {
     <>
       <Hero
         image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640887994/my-uploads/f07th2tkiwz5mpcmy7el.jpg"
-        image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+        image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamutes/heros/cellgradiantbottom.png"
         description={`Hi, I am ${router.query.name}!`}
         button="Go Back"
         location="/puppies"
