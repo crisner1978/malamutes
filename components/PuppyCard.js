@@ -21,6 +21,7 @@ const PuppyCard = ({ img, name, id }) => {
             className="rounded-b-xl"
             layout="fill"
             objectFit="cover"
+            alt="Alaskan Malamute Puppy"
           />
         </div>
         {reserved && (

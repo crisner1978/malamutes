@@ -26,8 +26,8 @@ const Malamutes = ({ images, nextCursor, folders }) => {
       {router.query.name === "letty" ? (
         <>
           <Hero
-            image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640466871/malamuteHeros/maa1on3byr3ki0c190m9.jpg"
-            image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+            image="https://res.cloudinary.com/dtram9qiy/image/upload/v1640466871/malamutes/heros/letty.jpg"
+            image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamutes/heros/cellgradiantbottom.png"
             description={`${router.query.name}'s gallery`}
             button="Home"
             location="/"
@@ -41,8 +41,8 @@ const Malamutes = ({ images, nextCursor, folders }) => {
       ) : (
         <>
           <Hero
-            image="https://res.cloudinary.com/dtram9qiy/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640731348/malamuteHeros/qdutpmhwabbwrqhcwexm.jpg"
-            image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamuteHeros/fagefjsmcvybmb9say0y.png"
+            image="https://res.cloudinary.com/dtram9qiy/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1640731348/malamutes/heros/qdutpmhwabbwrqhcwexm.jpg"
+            image1="https://res.cloudinary.com/dtram9qiy/image/upload/v1640819418/malamutes/heros/cellgradiantbottom.png"
             description={`${router.query.name}'s gallery`}
             button="Home"
             location="/"
@@ -62,6 +62,7 @@ const Malamutes = ({ images, nextCursor, folders }) => {
                 layout="fill"
                 objectFit="cover"
                 objectPosition="bottom"
+                alt="Alaskan Malamute"
               />
             </div>
           </div>
@@ -112,10 +113,9 @@ export default Malamutes;
 export async function getServerSideProps({ params }) {
   console.log("PARAMS.NAME", params.name);
   const str = params.name;
-  const str2 = str.charAt(0).toUpperCase() + str.slice(1);
-  console.log("str2", str2);
+  
   const results = await search({
-    expression: `folder="${str2}"`,
+    expression: `folder="malamutes/${str}"`,
   });
 
   const { resources, next_cursor: nextCursor } = results;

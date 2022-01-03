@@ -2,12 +2,12 @@ import BioText from "components/BioText";
 import Hero from "components/Hero";
 import PuppyCard from "components/PuppyCard";
 import { getFolders, mapImageResources, search } from "lib/cloudinary";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import moment from "moment";
 import React from "react";
 
 const Puppies = ({ images }) => {
-  const router = useRouter();
+  const today = moment([2021, 11, 11]).fromNow(true);
+  console.log(today);
 
   return (
     <div className="bg-gray-50">
@@ -22,8 +22,9 @@ const Puppies = ({ images }) => {
       <main className="max-w-7xl mx-auto px-3">
         <BioText
           title="Snow Legend Malamutes"
-          description='We are pleased to announce our first litter of TEN puppies from "Papa" Rollo and "Mama" Letty born on 12/11/2021. 
-          All of our puppies are vet checked, wormed, and given age appropriate shots before joining their new families. Contact us for details and pricing.'
+          video="https://res.cloudinary.com/dtram9qiy/video/upload/v1641098209/my-uploads/IMG_6341_u1hilb.mov"
+          description={`We are pleased to announce our first litter of TEN puppies from "Papa" Rollo and "Mama" Letty born on 12/11/2021. As of today, they are ${today} old 
+          and growing fluffier every day. All of our puppies are vet checked, wormed, and given age appropriate shots before joining their new families. Contact us for details and pricing.`}
         />
         <section className="font-fancy pt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 min-w-fit md:max-w-3xl md:pl-2 mx-auto gap-10 mt-5 pb-10">
@@ -33,10 +34,6 @@ const Puppies = ({ images }) => {
               </div>
             ))}
           </div>
-        </section>
-
-        <section>
-          {/* PUPPIES SMALL CARDS OR A BIG POSTER CARD OF ALL PUPPIES */}
         </section>
       </main>
     </div>

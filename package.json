@@ -10,10 +10,13 @@
     "@heroicons/react": "^1.0.5",
     "@sendgrid/mail": "^7.6.0",
     "@tailwindcss/forms": "^0.4.0",
+    "moment": "^2.29.1",
     "next": "latest",
     "react": "^17.0.2",
+    "react-cool-inview": "^2.0.8",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.5",
+    "react-icons": "^4.3.1",
     "react-phone-number-input": "^3.1.44",
     "react-query": "^3.34.7",
     "recoil": "^0.5.2"

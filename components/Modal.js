@@ -9,7 +9,6 @@ import { useRecoilState } from "recoil";
 import { useMutation } from "react-query";
 import { formatPhoneNumber } from "react-phone-number-input";
 
-
 const Modal = () => {
   const [open, setOpen] = useRecoilState(modalState);
   const {
@@ -169,7 +168,7 @@ const Modal = () => {
                     id="message"
                     cols="30"
                     rows="3"
-                  ></textarea>
+                  />
                   <span className="formErrorMsg">
                     {errors.message?.message}
                   </span>

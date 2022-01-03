@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base {
+    html {
+        @apply font-fancy
+    }
+} */
 
 @layer components {
     .h1 {
@@ -26,13 +31,13 @@
 
     /* modal form styles */
     .inputWrapper {
-        @apply flex flex-col
+        @apply flex flex-col relative
     }
     .formLabel {
         @apply text-sm font-fancy text-gray-700 pb-1;
     }
     .formInput {
-        @apply bg-gray-200 bg-opacity-90 font-medium focus:ring-0 outline-none border-none mb-3 rounded-lg;
+        @apply bg-gray-200 bg-opacity-90 font-medium focus:ring-0 outline-none border-none mb-3 rounded-md;
     }
     .formSubmitBtn {
         @apply text-xl font-fancy py-2 text-blue-500 
@@ -42,6 +47,18 @@
             border-blue-500 border-2; 
       }
       .formErrorMsg {
-        @apply absolute right-6 text-red-500 font-fancy text-sm;
+        @apply absolute right-1 text-red-500 font-fancy text-sm;
+      }
+
+      /* ContactLabel button for Modal */
+      .contactLabel {
+          @apply inline-block rounded-l-full fixed py-1 pl-3 pr-2 md:py-3 md:pl-8 md:pr-4
+          bg-black right-0 top-1/4 z-40 cursor-pointer hover:scale-105 font-fancy text-white 
+          md:text-base text-right text-sm
+      }
+
+      /* Adoption form */
+      .titleField {
+          @apply font-fancy text-xl text-gray-600 text-center mb-6
       }
 }

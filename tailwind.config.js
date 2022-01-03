@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        fancy: ["Cinzel" ]
+        fancy: ["Cinzel", "sans-serif" ]
       }
     },
   },
