@@ -1,11 +1,8 @@
 import Image from "next/image";
-import useInView from "react-cool-inview";
 import PuppyVideo from "./PuppyVideo";
 
-function BioText({ title, description, description1, video }) {
-  const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => unobserve(),
-  });
+function BioText({ title, description, description1 }) {
+
 
   return (
     <section className="py-24 grid px-3 sm:px-16 max-w-3xl items-center mx-auto">
@@ -26,12 +23,9 @@ function BioText({ title, description, description1, video }) {
         </div>
       </div>
 
-      <div ref={observe} className="text-gray-500 font-medium text-xl">
+      <div className="text-gray-500 font-medium text-xl">
         <p className="indent-10 pb-5">{description}</p>
         {description1 && <p className="indent-10 pb-5">{description1}</p>}
-        {video && (
-          inView && <PuppyVideo src={video}/>
-        )}
       </div>
     </section>
   );
