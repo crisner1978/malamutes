@@ -19,9 +19,9 @@ const Header = () => {
 
         {/* Right Side */}
         <div className="flex items-center justify-end space-x-4 font-fancy text-sm">
-            <Link className={`${router.asPath === '/about' && "text-blue-500"} navBtn`} href='/about'>About Us</Link>
-            <Link className={`${router.asPath === '/puppies' && "text-blue-500"} navBtn`} href='/puppies'>Puppies</Link>
-            <Link className={`${router.asPath === '/adoption' && "text-blue-500"} navBtn`} href='/adoption'>Adoption App</Link>
+            <Link  href='/about'><span className={`${router.asPath === '/about' && "text-blue-600"} navBtn`}>About Us</span></Link>
+            <Link  href='/puppies'><span className={`${router.asPath === '/puppies' && "text-blue-600"} navBtn`}>Puppies</span></Link>
+            <Link  href='/adoption'><span className={`${router.asPath === '/adoption' && "text-blue-600"} navBtn`}>Adoption App</span></Link>
         </div>
       </nav>
     </header>

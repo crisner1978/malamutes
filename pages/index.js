@@ -41,7 +41,7 @@ export default function Home({ images }) {
               {`We are pleased to announce our first litter of TEN puppies from
               "Papa" Rollo and "Mama" Letty. Today the puppies are ${today} old. Please visit our`}{" "}
               <span
-                className="text-blue-500 cursor-pointer"
+                className="text-blue-600 cursor-pointer"
                 onClick={() => router.push("/puppies")}
               >
                 Puppies{" "}

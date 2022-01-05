@@ -81,12 +81,12 @@ const Malamutes = ({ images, nextCursor, folders }) => {
           <span
             className={`cursorLabel ${
               router.query.name === "rollo"
-                ? "hover:text-pink-500"
-                : "hover:text-blue-500"
+                ? "hover:text-pink-600"
+                : "hover:text-blue-600"
             }`}
           >
             {router.query.name === "rollo" && (
-              <ChevronDoubleLeftIcon className="cursorBtn text-pink-500 pr-2" />
+              <ChevronDoubleLeftIcon className="cursorBtn text-pink-600 pr-2" />
             )}
             {`${opposite}'s Gallery`}
             {router.query.name === "letty" && (

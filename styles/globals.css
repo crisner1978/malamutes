@@ -13,10 +13,10 @@
         @apply font-thin
     }
     .cursorBtn {
-        @apply h-5 animate-pulse text-blue-500 hover:scale-110 transition-all duration-150 ease-out
+        @apply h-5 animate-pulse text-blue-600 hover:scale-110 transition-all duration-150 ease-out
     }
     .homeCursorBtn {
-        @apply hover:scale-110 hover:text-blue-500 transition-all duration-150 ease-out
+        @apply hover:scale-110 hover:text-blue-600 transition-all duration-150 ease-out
     }
     .cursorLabel {
         @apply font-fancy inline-flex items-center cursor-pointer hover:scale-110 transition-all duration-150 ease-out
@@ -40,11 +40,11 @@
         @apply bg-gray-200 bg-opacity-90 font-medium focus:ring-0 outline-none border-none mb-3 rounded-md;
     }
     .formSubmitBtn {
-        @apply text-xl font-fancy py-2 text-blue-500 
-            hover:text-white hover:bg-blue-500 rounded-full max-w-full
+        @apply text-xl font-fancy py-2 text-blue-600 
+            hover:text-white hover:bg-blue-600 rounded-full max-w-full
             shadow-lg active:scale-95 
             transition-all transform duration-150 ease-out
-            border-blue-500 border-2; 
+            border-blue-600 border-2; 
       }
       .formErrorMsg {
         @apply absolute right-1 text-red-500 font-fancy text-sm;
