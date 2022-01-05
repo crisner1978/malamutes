@@ -11,7 +11,7 @@ const Hero = ({ image, image1, description, button, location }) => {
       <Image src={image} layout="fill" objectFit="cover" priority as="image" alt="Alaskan Malamute" />
       <Image src={image1} layout="fill" objectFit="cover" alt="background gradiant" />
       <div className="absolute bottom-5 w-full text-center font-fancy">
-        <p className="text-xl sm:text-3xl text-white">{description}</p>
+        <h1 className="text-xl sm:text-3xl text-white">{description}</h1>
         <button onClick={() => router.push(location)} className="heroBtn">
           {button}
         </button>
