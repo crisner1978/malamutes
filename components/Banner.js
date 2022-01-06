@@ -31,7 +31,9 @@ const Banner = () => {
         alt="background gradiant"
       />
       <div className="absolute bottom-0 w-full text-center font-fancy md:hidden">
-        <h2 className="text-xl sm:text-3xl text-white">Snow Legend Malamutes</h2>
+        <h2 className="text-xl sm:text-3xl text-white">
+          Snow Legend Malamutes
+        </h2>
         <button onClick={() => setOpen(true)} className="heroBtn">
           Contact Us
         </button>

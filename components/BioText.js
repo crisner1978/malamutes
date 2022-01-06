@@ -1,9 +1,6 @@
 import Image from "next/image";
-import PuppyVideo from "./PuppyVideo";
 
 function BioText({ title, description, description1 }) {
-
-
   return (
     <section className="py-24 grid px-3 sm:px-16 max-w-3xl items-center mx-auto">
       <div className="flex flex-col items-center justify-center pb-4 pt-10">
