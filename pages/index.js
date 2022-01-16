@@ -9,7 +9,11 @@ import useInView from "react-cool-inview";
 const PuppyVideo = dynamic(() => import("components/PuppyVideo"));
 
 export default function Home({ images }) {
-  const today = moment([2021, 11, 11]).fromNow(true);
+  const today = moment()
+  const born = moment([2021, 11, 11])
+  const howOld = today.diff(born, 'days');
+console.log(howOld)
+
   const router = useRouter();
   const { observe, inView } = useInView({
     onEnter: ({ unobserve }) => unobserve(),
@@ -38,8 +42,8 @@ export default function Home({ images }) {
 
           <div className="text-gray-500 font-medium text-xl">
             <p className="indent-10 pb-5">
-              {`We are pleased to announce our first litter of TEN puppies from
-              "Papa" Rollo and "Mama" Letty. Today the puppies are ${today} old. Please visit our`}{" "}
+              {`We are pleased to announce our first litter of NINE puppies from
+              "Papa" Rollo and "Mama" Letty. Today the puppies are ${howOld} days old. Please visit our`}{" "}
               <span
                 className="text-blue-600 cursor-pointer"
                 onClick={() => router.push("/puppies")}

@@ -9,7 +9,9 @@ import useInView from "react-cool-inview";
 const PuppyVideo = dynamic(() => import("components/PuppyVideo"));
 
 const Puppies = ({ images }) => {
-  const today = moment([2021, 11, 11]).fromNow(true);
+  const today = moment()
+  const born = moment([2021, 11, 11])
+  const howOld = today.diff(born, 'days');
   const { observe, inView } = useInView({
     onEnter: ({ unobserve }) => unobserve(),
   });
@@ -29,7 +31,7 @@ const Puppies = ({ images }) => {
         <BioText
           title="Snow Legend Malamutes"
           // video=""
-          description={`We are pleased to announce our first litter of TEN puppies from "Papa" Rollo and "Mama" Letty born on 12/11/2021. As of today, they are ${today} old 
+          description={`We are pleased to announce our first litter of NINE puppies from "Papa" Rollo and "Mama" Letty born on 12/11/2021. As of today, they are ${howOld} days old 
           and growing fluffier every day. All of our puppies are vet checked, wormed, and given age appropriate shots before joining their new families. Contact us for details and pricing.`}
         />
         <div ref={observe} className="-mt-24 pb-24 grid px-3 sm:px-16 max-w-3xl items-center mx-auto">
