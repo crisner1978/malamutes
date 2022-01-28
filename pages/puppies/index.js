@@ -17,6 +17,8 @@ const Puppies = ({ images }) => {
   });
   // console.log(today);
 
+
+
   return (
     <div className="bg-gray-50">
       <Hero
@@ -64,6 +66,7 @@ export async function getStaticProps() {
   const images = mapImageResources(resources).reverse();
 
   const { folders } = await getFolders();
+
 
   return {
     props: {
