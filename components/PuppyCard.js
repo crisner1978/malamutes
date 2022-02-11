@@ -3,7 +3,8 @@ import Link from "next/link";
 
 const PuppyCard = ({ img, name, id }) => {
   const female = name == "tove" || name == "freya";
-  const reserved = name == "curly" || name == "bjorn";
+  const reserved = name == "gunnar";
+  const sold = name == "bjorn" || name == "curly";
 
   return (
     <Link href={`/puppies/[name]`} as={`/puppies/${name}`}>
@@ -25,8 +26,13 @@ const PuppyCard = ({ img, name, id }) => {
           />
         </div>
         {reserved && (
-          <label className="text-5xl text-rose-600  absolute bottom-[10px] left-14">
+          <label className="text-6xl text-rose-600  absolute bottom-[10px] left-8">
             reserved
+          </label>
+        )}
+        {sold && (
+          <label className="text-6xl text-rose-600  absolute bottom-[10px] left-24">
+            sold
           </label>
         )}
       </div>
