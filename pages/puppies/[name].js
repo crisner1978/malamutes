@@ -6,7 +6,7 @@ import { getFolders, mapImageResources, search } from "lib/cloudinary";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-const PuppyNames = ({ images, nextCursor, folders }) => {
+const PuppyNames = ({ images }) => {
   const router = useRouter();
 
   return (
