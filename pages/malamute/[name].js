@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Malamutes = ({ images, nextCursor, folders }) => {
+const Malamutes = ({ images }) => {
   const router = useRouter();
 
   const opposite =
