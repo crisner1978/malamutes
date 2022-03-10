@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PuppyCard = ({ img, name, id }) => {
   const female = name == "tove" || name == "freya";
-  const reserved = name == "omega";
+  const reserved = name == "omega" || name == "vader";
   const sold = name == "bjorn" || name == "curly" || name == "tove";
 
   return (
