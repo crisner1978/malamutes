@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const PuppyCard = ({ img, name, id }) => {
   const female = name == "tove" || name == "freya";
-  const reserved = name == "omega";
-  const sold = name == "bjorn" || name == "curly" || name == "tove" || name == "vader";
+
+  const sold = name == "bjorn" || name == "curly" || name == "tove" || name == "vader" || name == "gunnar";
 
   return (
     <Link href={`/puppies/[name]`} as={`/puppies/${name}`}>
