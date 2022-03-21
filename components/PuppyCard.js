@@ -25,11 +25,7 @@ const PuppyCard = ({ img, name, id }) => {
             alt="Alaskan Malamute Puppy"
           />
         </div>
-        {/* {reserved && (
-          <label className="text-6xl text-rose-600  absolute bottom-[10px] left-8">
-            reserved
-          </label>
-        )} */}
+
         {sold && (
           <label className="text-6xl text-rose-600  absolute bottom-[10px] left-24">
             sold
